@@ -7,6 +7,7 @@
   background-position
   */
   background: url("../images/login-background.jpg") no-repeat center center;
+  opacity: 0.85;
   background-size: cover;
   height: calc(100vh - 0px);
   position: relative;
