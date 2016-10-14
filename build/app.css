@@ -32,7 +32,7 @@
 
 .login-container__content input {
   width: 100%;
-  border-radius: 15px;
+  border-radius: 10px;
   padding: 12px;
   box-sizing: border-box;
   margin-top: 10px;
@@ -42,6 +42,10 @@
 .login-container__form div {
   margin: 10px 0;
   font-size: 0.8em;
+}
+
+.login-container__form input {
+  border: solid white 3px;
 }
 
 .login-container__form--login-button {
