@@ -1,0 +1,73 @@
+.login-container {
+  /*
+  background-color
+  background-image
+  background-repeat
+  background-attachment
+  background-position
+  */
+  background: url("../images/login-background.jpg") no-repeat center center;
+  background-size: cover;
+  height: calc(100vh - 0px);
+  position: relative;
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 320px;
+    padding: 20px;
+    text-align: center;
+
+    h1 {
+      color:#ffffff;
+    }
+
+    span {
+      color: grey;
+    }
+
+    input {
+      width: 100%;
+      border-radius: 15px;
+      padding: 12px;
+      box-sizing: border-box;
+      margin-top: 10px;
+      outline-width: 0;
+    }
+  }
+
+  &__form {
+    div {
+      margin: 10px 0;
+      font-size: 0.8em;
+    }
+    &--login-button {
+      background: rgba(255,255,255,0.1);
+      color: #ffffff;
+    }
+  }
+
+  &__social-buttons {
+    input {
+      margin-top: 10px;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    &--facebook {
+      background: #3b5998;
+      border-color: #3b5998;
+    }
+
+    &--twitter {
+      background: #1da1f2;
+      border-color: #1da1f2;
+    }
+
+    &--twitch {
+      background: #6441a4;
+      border-color: #6441a4;
+    }
+  }
+}

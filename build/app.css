@@ -1,0 +1,71 @@
+.login-container {
+  /*
+  background-color
+  background-image
+  background-repeat
+  background-attachment
+  background-position
+  */
+  background: url("../images/login-background.jpg") no-repeat center center;
+  background-size: cover;
+  height: calc(100vh - 0px);
+  position: relative;
+}
+
+.login-container__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-container__content h1 {
+  color: #ffffff;
+}
+
+.login-container__content span {
+  color: grey;
+}
+
+.login-container__content input {
+  width: 100%;
+  border-radius: 15px;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  outline-width: 0;
+}
+
+.login-container__form div {
+  margin: 10px 0;
+  font-size: 0.8em;
+}
+
+.login-container__form--login-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.login-container__social-buttons input {
+  margin-top: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.login-container__social-buttons--facebook {
+  background: #3b5998;
+  border-color: #3b5998;
+}
+
+.login-container__social-buttons--twitter {
+  background: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.login-container__social-buttons--twitch {
+  background: #6441a4;
+  border-color: #6441a4;
+}
