@@ -1,1 +1,11 @@
+// configuration
+@import "config/variables";
+
+// pages
 @import "components/login";
+@import "components/register";
+@import "components/profile";
+
+
+@import "components/navbar";
+@import "components/footer";

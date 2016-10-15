@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+}
+
+$navbar-profile-image-size: 49px;
+$navbar-height: 60px;
+$navbar-padding: 20px;
+nav {
+  box-sizing: border-box;
+  background: #000000;
+
+  height: $navbar-height;
+
+  .navbar-container {
+    width: 80%;
+    margin: 0 auto;
+
+    ul {
+      .search-bar {
+        padding: 5px;
+        margin-left: 50px;
+        input {
+          padding: 15px;
+          width: 100%;
+          outline: none;
+        }
+      }
+
+      .profile-image {
+        padding: 5px;
+        img {
+          border-radius: 30px;
+          height: $navbar-profile-image-size;
+          width: $navbar-profile-image-size;
+          border: 2px solid #ffffff;
+        }
+      }
+
+      li {
+        float: left;
+        list-style-type: none;
+        padding: $navbar-padding;
+
+
+
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+
+    .left {
+      float: left;
+    }
+    .right {
+      float: right;
+    }
+
+    .clear-fix {
+      clear: both;
+    }
+  }
+}

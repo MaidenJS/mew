@@ -74,3 +74,217 @@
   background: #6441a4;
   border-color: #6441a4;
 }
+
+.login-container {
+  /*
+  background-color
+  background-image
+  background-repeat
+  background-attachment
+  background-position
+  */
+  background: url("../images/login-background.jpg") no-repeat center center;
+  opacity: 0.85;
+  background-size: cover;
+  height: calc(100vh - 0px);
+  position: relative;
+}
+
+.login-container__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-container__content h1 {
+  color: #ffffff;
+}
+
+.login-container__content span {
+  color: grey;
+}
+
+.login-container__content input {
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  outline-width: 0;
+}
+
+.login-container__form div {
+  margin: 10px 0;
+  font-size: 0.8em;
+}
+
+.login-container__form input {
+  border: solid white 3px;
+}
+
+.login-container__form--login-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.login-container__social-buttons input {
+  margin-top: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.login-container__social-buttons--facebook {
+  background: #3b5998;
+  border-color: #3b5998;
+}
+
+.login-container__social-buttons--twitter {
+  background: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.login-container__social-buttons--twitch {
+  background: #6441a4;
+  border-color: #6441a4;
+}
+
+.login-container {
+  /*
+  background-color
+  background-image
+  background-repeat
+  background-attachment
+  background-position
+  */
+  background: url("../images/login-background.jpg") no-repeat center center;
+  opacity: 0.85;
+  background-size: cover;
+  height: calc(100vh - 0px);
+  position: relative;
+}
+
+.login-container__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-container__content h1 {
+  color: #ffffff;
+}
+
+.login-container__content span {
+  color: grey;
+}
+
+.login-container__content input {
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  outline-width: 0;
+}
+
+.login-container__form div {
+  margin: 10px 0;
+  font-size: 0.8em;
+}
+
+.login-container__form input {
+  border: solid white 3px;
+}
+
+.login-container__form--login-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.login-container__social-buttons input {
+  margin-top: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.login-container__social-buttons--facebook {
+  background: #3b5998;
+  border-color: #3b5998;
+}
+
+.login-container__social-buttons--twitter {
+  background: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.login-container__social-buttons--twitch {
+  background: #6441a4;
+  border-color: #6441a4;
+}
+
+* {
+  margin: 0;
+}
+
+nav {
+  box-sizing: border-box;
+  background: #000000;
+  height: 60px;
+}
+
+nav .navbar-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+nav .navbar-container ul .search-bar {
+  padding: 5px;
+  margin-left: 50px;
+}
+
+nav .navbar-container ul .search-bar input {
+  padding: 15px;
+  width: 100%;
+  outline: none;
+}
+
+nav .navbar-container ul .profile-image {
+  padding: 5px;
+}
+
+nav .navbar-container ul .profile-image img {
+  border-radius: 30px;
+  height: 49px;
+  width: 49px;
+  border: 2px solid #ffffff;
+}
+
+nav .navbar-container ul li {
+  float: left;
+  list-style-type: none;
+  padding: 20px;
+}
+
+nav .navbar-container ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+nav .navbar-container .left {
+  float: left;
+}
+
+nav .navbar-container .right {
+  float: right;
+}
+
+nav .navbar-container .clear-fix {
+  clear: both;
+}
