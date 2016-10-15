@@ -236,7 +236,7 @@
 nav {
   box-sizing: border-box;
   background: #000000;
-  height: 60px;
+  height: 62px;
 }
 
 nav .navbar-container {
@@ -261,9 +261,13 @@ nav .navbar-container ul .profile-image {
 
 nav .navbar-container ul .profile-image img {
   border-radius: 30px;
-  height: 49px;
-  width: 49px;
+  height: 44px;
+  width: 44px;
   border: 2px solid #ffffff;
+}
+
+nav .navbar-container ul .profile-image:hover {
+  opacity: 0.5;
 }
 
 nav .navbar-container ul li {
@@ -287,4 +291,32 @@ nav .navbar-container .right {
 
 nav .navbar-container .clear-fix {
   clear: both;
+}
+
+nav .navbar-container .settings {
+  float: right;
+  background: grey;
+}
+
+nav .navbar-container .settings ul {
+  padding: 0;
+}
+
+nav .navbar-container .settings ul li {
+  float: none;
+  text-align: center;
+  padding: 0;
+}
+
+nav .navbar-container .settings ul li:hover {
+  background: lightgray;
+}
+
+nav .navbar-container .settings ul li:hover a {
+  color: black;
+}
+
+nav .navbar-container .settings ul li a {
+  padding: 15px;
+  display: block;
 }

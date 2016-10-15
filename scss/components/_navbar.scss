@@ -2,8 +2,8 @@
   margin: 0;
 }
 
-$navbar-profile-image-size: 49px;
-$navbar-height: 60px;
+$navbar-profile-image-size: 44px;
+$navbar-height: 62px;
 $navbar-padding: 20px;
 nav {
   box-sizing: border-box;
@@ -34,14 +34,15 @@ nav {
           width: $navbar-profile-image-size;
           border: 2px solid #ffffff;
         }
+        &:hover {
+          opacity: 0.5;
+        }
       }
 
       li {
         float: left;
         list-style-type: none;
         padding: $navbar-padding;
-
-
 
         a {
           text-decoration: none;
@@ -59,6 +60,34 @@ nav {
 
     .clear-fix {
       clear: both;
+    }
+
+
+    .settings {
+      //color: #ffffff;
+      float: right;
+      background: grey;
+      //display: none;
+      ul {
+        padding: 0;
+        li {
+          float: none;
+          text-align: center;
+          padding: 0;
+          &:hover {
+            background: lightgray;
+
+            a {
+              color: black;
+            }
+          }
+          a {
+            //color: black;
+            padding: 15px;
+            display: block;
+          }
+        }
+      }
     }
   }
 }
