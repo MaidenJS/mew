@@ -255,6 +255,15 @@ nav .navbar-container ul .search-bar input {
   outline: none;
 }
 
+nav .navbar-container ul .mail-image {
+  padding: 5px;
+}
+
+nav .navbar-container ul .mail-image img {
+  width: 44px;
+  height: 44px;
+}
+
 nav .navbar-container ul .profile-image {
   padding: 5px;
 }
