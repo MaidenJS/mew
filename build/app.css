@@ -1,242 +1,192 @@
-.login-container {
-  /*
-  background-color
-  background-image
-  background-repeat
-  background-attachment
-  background-position
-  */
-  background: url("../images/login-background.jpg") no-repeat center center;
-  opacity: 0.85;
-  background-size: cover;
-  height: calc(100vh - 0px);
-  position: relative;
-}
-
-.login-container__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  padding: 20px;
-  text-align: center;
-}
-
-.login-container__content h1 {
-  color: #ffffff;
-}
-
-.login-container__content span {
-  color: grey;
-}
-
-.login-container__content input {
-  width: 100%;
-  border-radius: 10px;
-  padding: 12px;
-  box-sizing: border-box;
-  margin-top: 10px;
-  outline-width: 0;
-}
-
-.login-container__form div {
-  margin: 10px 0;
-  font-size: 0.8em;
-}
-
-.login-container__form input {
-  border: solid white 3px;
-}
-
-.login-container__form--login-button {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-}
-
-.login-container__social-buttons input {
-  margin-top: 10px;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.login-container__social-buttons--facebook {
-  background: #3b5998;
-  border-color: #3b5998;
-}
-
-.login-container__social-buttons--twitter {
-  background: #1da1f2;
-  border-color: #1da1f2;
-}
-
-.login-container__social-buttons--twitch {
-  background: #6441a4;
-  border-color: #6441a4;
-}
-
-.login-container {
-  /*
-  background-color
-  background-image
-  background-repeat
-  background-attachment
-  background-position
-  */
-  background: url("../images/login-background.jpg") no-repeat center center;
-  opacity: 0.85;
-  background-size: cover;
-  height: calc(100vh - 0px);
-  position: relative;
-}
-
-.login-container__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  padding: 20px;
-  text-align: center;
-}
-
-.login-container__content h1 {
-  color: #ffffff;
-}
-
-.login-container__content span {
-  color: grey;
-}
-
-.login-container__content input {
-  width: 100%;
-  border-radius: 10px;
-  padding: 12px;
-  box-sizing: border-box;
-  margin-top: 10px;
-  outline-width: 0;
-}
-
-.login-container__form div {
-  margin: 10px 0;
-  font-size: 0.8em;
-}
-
-.login-container__form input {
-  border: solid white 3px;
-}
-
-.login-container__form--login-button {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-}
-
-.login-container__social-buttons input {
-  margin-top: 10px;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.login-container__social-buttons--facebook {
-  background: #3b5998;
-  border-color: #3b5998;
-}
-
-.login-container__social-buttons--twitter {
-  background: #1da1f2;
-  border-color: #1da1f2;
-}
-
-.login-container__social-buttons--twitch {
-  background: #6441a4;
-  border-color: #6441a4;
-}
-
-.login-container {
-  /*
-  background-color
-  background-image
-  background-repeat
-  background-attachment
-  background-position
-  */
-  background: url("../images/login-background.jpg") no-repeat center center;
-  opacity: 0.85;
-  background-size: cover;
-  height: calc(100vh - 0px);
-  position: relative;
-}
-
-.login-container__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 320px;
-  padding: 20px;
-  text-align: center;
-}
-
-.login-container__content h1 {
-  color: #ffffff;
-}
-
-.login-container__content span {
-  color: grey;
-}
-
-.login-container__content input {
-  width: 100%;
-  border-radius: 10px;
-  padding: 12px;
-  box-sizing: border-box;
-  margin-top: 10px;
-  outline-width: 0;
-}
-
-.login-container__form div {
-  margin: 10px 0;
-  font-size: 0.8em;
-}
-
-.login-container__form input {
-  border: solid white 3px;
-}
-
-.login-container__form--login-button {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-}
-
-.login-container__social-buttons input {
-  margin-top: 10px;
-  color: #ffffff;
-  cursor: pointer;
-}
-
-.login-container__social-buttons--facebook {
-  background: #3b5998;
-  border-color: #3b5998;
-}
-
-.login-container__social-buttons--twitter {
-  background: #1da1f2;
-  border-color: #1da1f2;
-}
-
-.login-container__social-buttons--twitch {
-  background: #6441a4;
-  border-color: #6441a4;
-}
-
 * {
   margin: 0;
+  box-sizing: border-box;
+}
+
+.login-container {
+  /*
+  background-color
+  background-image
+  background-repeat
+  background-attachment
+  background-position
+  */
+  background: url("../images/login-background.jpg") no-repeat center center;
+  opacity: 0.85;
+  background-size: cover;
+  height: calc(100vh - 0px);
+  position: relative;
+}
+
+.login-container__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-container__content h1 {
+  color: #ffffff;
+}
+
+.login-container__content span {
+  color: grey;
+}
+
+.login-container__content input {
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  outline-width: 0;
+}
+
+.login-container__form div {
+  margin: 10px 0;
+  font-size: 0.8em;
+}
+
+.login-container__form input {
+  border: solid white 3px;
+}
+
+.login-container__form--login-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.login-container__social-buttons input {
+  margin-top: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.login-container__social-buttons--facebook {
+  background: #3b5998;
+  border-color: #3b5998;
+}
+
+.login-container__social-buttons--twitter {
+  background: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.login-container__social-buttons--twitch {
+  background: #6441a4;
+  border-color: #6441a4;
+}
+
+.login-container {
+  /*
+  background-color
+  background-image
+  background-repeat
+  background-attachment
+  background-position
+  */
+  background: url("../images/login-background.jpg") no-repeat center center;
+  opacity: 0.85;
+  background-size: cover;
+  height: calc(100vh - 0px);
+  position: relative;
+}
+
+.login-container__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  padding: 20px;
+  text-align: center;
+}
+
+.login-container__content h1 {
+  color: #ffffff;
+}
+
+.login-container__content span {
+  color: grey;
+}
+
+.login-container__content input {
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px;
+  box-sizing: border-box;
+  margin-top: 10px;
+  outline-width: 0;
+}
+
+.login-container__form div {
+  margin: 10px 0;
+  font-size: 0.8em;
+}
+
+.login-container__form input {
+  border: solid white 3px;
+}
+
+.login-container__form--login-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.login-container__social-buttons input {
+  margin-top: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.login-container__social-buttons--facebook {
+  background: #3b5998;
+  border-color: #3b5998;
+}
+
+.login-container__social-buttons--twitter {
+  background: #1da1f2;
+  border-color: #1da1f2;
+}
+
+.login-container__social-buttons--twitch {
+  background: #6441a4;
+  border-color: #6441a4;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-container .profile-container-column {
+  padding: 20px;
+  background: lightblue;
+  border: solid black 2px;
+  margin: 0 2px;
+}
+
+.profile-container .column1-1 {
+  flex-basis: 30%;
+}
+
+.profile-container .column1-2 {
+  flex-basis: 50%;
+}
+
+.profile-container .column1-3 {
+  flex-basis: 15%;
 }
 
 nav {
   box-sizing: border-box;
   background: #000000;
-  height: 62px;
+  height: 58px;
 }
 
 nav .navbar-container {
@@ -244,9 +194,24 @@ nav .navbar-container {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 480px) {
+  nav .navbar-container {
+    width: 95%;
+  }
+}
+
+nav .navbar-container ul {
+  padding: 0;
+}
+
 nav .navbar-container ul .search-bar {
   padding: 5px;
-  margin-left: 50px;
+}
+
+@media screen and (max-width: 767px) {
+  nav .navbar-container ul .search-bar {
+    display: none;
+  }
 }
 
 nav .navbar-container ul .search-bar input {
@@ -264,18 +229,18 @@ nav .navbar-container ul .mail-image img {
   height: 44px;
 }
 
-nav .navbar-container ul .profile-image {
+nav .navbar-container ul .navbar-container__profile-image {
   padding: 5px;
 }
 
-nav .navbar-container ul .profile-image img {
+nav .navbar-container ul .navbar-container__profile-image img {
   border-radius: 30px;
   height: 44px;
   width: 44px;
   border: 2px solid #ffffff;
 }
 
-nav .navbar-container ul .profile-image:hover {
+nav .navbar-container ul .navbar-container__profile-image:hover {
   opacity: 0.5;
 }
 
@@ -290,11 +255,11 @@ nav .navbar-container ul li a {
   color: #fff;
 }
 
-nav .navbar-container .left {
+nav .navbar-container__left-section {
   float: left;
 }
 
-nav .navbar-container .right {
+nav .navbar-container__right-section {
   float: right;
 }
 
@@ -302,31 +267,31 @@ nav .navbar-container .clear-fix {
   clear: both;
 }
 
-nav .navbar-container .settings {
+nav .navbar-container__nav-settings {
   float: right;
   background: grey;
   display: none;
 }
 
-nav .navbar-container .settings ul {
+nav .navbar-container__nav-settings ul {
   padding: 0;
 }
 
-nav .navbar-container .settings ul li {
+nav .navbar-container__nav-settings ul li {
   float: none;
   text-align: center;
   padding: 0;
 }
 
-nav .navbar-container .settings ul li:hover {
+nav .navbar-container__nav-settings ul li:hover {
   background: lightgray;
 }
 
-nav .navbar-container .settings ul li:hover a {
+nav .navbar-container__nav-settings ul li:hover a {
   color: black;
 }
 
-nav .navbar-container .settings ul li a {
+nav .navbar-container__nav-settings ul li a {
   padding: 15px;
   display: block;
 }

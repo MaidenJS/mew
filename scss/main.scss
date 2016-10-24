@@ -1,4 +1,5 @@
 // configuration
+@import "config/config";
 @import "config/variables";
 
 // pages
@@ -6,6 +7,6 @@
 @import "components/register";
 @import "components/profile";
 
-
+// components
 @import "components/navbar";
 @import "components/footer";

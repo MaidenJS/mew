@@ -1,10 +1,7 @@
-* {
-  margin: 0;
-}
-
 $navbar-profile-image-size: 44px;
-$navbar-height: 62px;
+$navbar-height: 58px;
 $navbar-padding: 20px;
+
 nav {
   box-sizing: border-box;
   background: #000000;
@@ -13,12 +10,20 @@ nav {
 
   .navbar-container {
     width: 80%;
+
+    @media  screen and (max-width: 480px) {
+      width: 95%;
+    }
     margin: 0 auto;
 
     ul {
+      padding: 0;
       .search-bar {
+        @media  screen and (max-width: 767px) {
+          display: none;
+        }
         padding: 5px;
-        margin-left: 50px;
+        //margin-left: 50px;
         input {
           padding: 15px;
           width: 100%;
@@ -34,7 +39,7 @@ nav {
         }
       }
 
-      .profile-image {
+      .navbar-container__profile-image {
         padding: 5px;
         img {
           border-radius: 30px;
@@ -51,7 +56,6 @@ nav {
         float: left;
         list-style-type: none;
         padding: $navbar-padding;
-
         a {
           text-decoration: none;
           color: #fff;
@@ -59,10 +63,10 @@ nav {
       }
     }
 
-    .left {
+    &__left-section {
       float: left;
     }
-    .right {
+    &__right-section {
       float: right;
     }
 
@@ -70,8 +74,7 @@ nav {
       clear: both;
     }
 
-
-    .settings {
+    &__nav-settings {
       //color: #ffffff;
       float: right;
       background: grey;
