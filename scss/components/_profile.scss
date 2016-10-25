@@ -46,6 +46,20 @@
       &___description {
 
       }
+
+      &--language {
+        display: flex;
+        //justify-content: space-around;
+        > div {
+          margin-right: 100px;
+        }
+      }
+
+      &--education {
+        > div {
+          margin: 20px 0;
+        }
+      }
     }
 
     &__row {
@@ -55,11 +69,11 @@
 
       &--content {
         display: flex;
-        justify-content: space-between;
-        width: 60%;
-        &:first-child {
-          order: -1;
-        }
+        justify-content: space-around;//center;
+/*        :nth-child(1) {
+          order: 9;
+          margin-left: 30px;
+        }*/
       }
       .profile-content {
         padding: 10px 0;
@@ -71,9 +85,16 @@
     flex-basis: 10%;
     border-left: solid lightgray 0.1em;
     text-align: center;
+    padding: 10px;
     img {
       //height: 50px;
       width: 100%;
+    }
+    > div {
+      margin: 10px 0;
+      a {
+        text-decoration: none;
+      }
     }
   }
 

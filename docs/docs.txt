@@ -1,9 +1,7 @@
 Features
 ----------------------
 
-Account Settings
 Profile
-
-Feed
+Account Settings
 Login/Registration
-
+Feed
