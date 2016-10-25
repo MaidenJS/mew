@@ -192,6 +192,7 @@
 
 .profile-container .profile-container-column-2__content-row {
   margin-bottom: 10px;
+  display: flex;
 }
 
 .profile-container .profile-container-column-2__content--language {
