@@ -181,6 +181,13 @@
   margin: 10px 0;
 }
 
+.profile-container .profile-container-column-1__row img {
+  border: none;
+  border-radius: 0;
+  width: 40px;
+  height: 40px;
+}
+
 .profile-container .profile-container-column-2 {
   flex-basis: 40%;
   padding: 10px;
@@ -216,6 +223,7 @@
 .profile-container .profile-container-column-2__row--content {
   display: flex;
   justify-content: space-around;
+  text-align: center;
   /*        :nth-child(1) {
           order: 9;
           margin-left: 30px;
@@ -261,6 +269,21 @@
   height: 50px;
   background: black;
   margin-bottom: 10px;
+}
+
+.follow-button {
+  padding: 5px 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+  background: darkgray;
+  width: 80%;
+  cursor: pointer;
+  border-radius: 8px;
+  border: solid black 2px;
+}
+
+.follow-button :hover {
+  background: black;
 }
 
 nav {

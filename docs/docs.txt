@@ -1,6 +1,8 @@
 Features
-----------------------
+================================
 
+Layout - HTML & CSS pages
+--------------------------------
 Profile
     - show
     - edit
@@ -11,3 +13,4 @@ Authentication
     - login
 News Feed
     - for logged in home page
+Landing page
