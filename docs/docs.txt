@@ -2,6 +2,12 @@ Features
 ----------------------
 
 Profile
+    - show
+    - edit
 Account Settings
-Login/Registration
-Feed
+    - edit
+Authentication
+    - registration
+    - login
+News Feed
+    - for logged in home page
