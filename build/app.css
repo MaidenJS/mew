@@ -381,6 +381,26 @@
   color: white;
 }
 
+main {
+  margin: 20px 0 0 0;
+}
+
+main .feed-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+main .feed-container .player {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+  background: skyblue;
+  border: solid black 3px;
+  margin: 10px;
+  text-align: center;
+}
+
 nav {
   box-sizing: border-box;
   background: #000000;
