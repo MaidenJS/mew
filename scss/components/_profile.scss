@@ -26,6 +26,20 @@
         height: 40px;
       }
     }
+
+    .follow-button {
+      padding: 5px 10px;
+      font-size: 1.2em;
+      color: #ffffff;
+      background: darkgray;
+      width: 80%;
+      cursor: pointer;
+      border-radius: 8px;
+      border: solid black 2px;
+      :hover {
+        background: black;
+      }
+    }
   }
 
   .profile-container-column-2 {
@@ -126,18 +140,4 @@
   height: 50px;
   background: black;
   margin-bottom: 10px;
-}
-
-.follow-button {
-  padding: 5px 10px;
-  font-size: 1.2em;
-  color: #ffffff;
-  background: darkgray;
-  width: 80%;
-  cursor: pointer;
-  border-radius: 8px;
-  border: solid black 2px;
-  :hover {
-    background: black;
-  }
 }

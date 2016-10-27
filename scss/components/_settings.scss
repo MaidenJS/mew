@@ -1,0 +1,87 @@
+.settings-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .settings-bar {
+    padding: 5px;
+    border-right: solid lightgray 1px;
+    flex-basis: 20%;
+    margin: 5px;
+
+    > div {
+      margin: 10px;
+    }
+  }
+  .settings-main {
+    padding: 5px;
+    flex-basis: 50%;
+    border-right: solid lightgray 1px;
+    margin: 5px;
+
+    &__input {
+      margin: 20px 0;
+
+      &--style {
+        margin-top: 10px;
+        width: 80%;
+        border-radius: 5px;
+        border: solid lightgray 2px;
+        background: #dedede;
+        outline: none;
+        height: 2.5em;
+
+      }
+
+      &--update {
+          font-size: 1.2em;
+          background: lightgray;
+          cursor: pointer;
+
+        &:hover {
+          background: grey;
+          color: white;
+        }
+      }
+    }
+
+    .social-accounts {
+      border-top: solid lightgray 1px;
+      h3 {
+        margin-top: 20px;
+      }
+      button {
+        margin-top: 20px;
+        font-weight: 600;
+        padding: 5px;
+        cursor: pointer;
+        width: 300px;
+        height: 50px;
+        border-radius: 6px;
+
+        img {
+          vertical-align: bottom;
+        }
+      }
+
+      .facebook {
+        background: #3b5998;
+        border: solid #3b5998 5px;
+        color: white;
+      }
+
+      .twitter {
+        background: #55c7ea;
+        border: solid #55c7ea 5px;
+        color: white;
+      }
+
+      .twitch {
+        background: #6441a5;
+        border: solid #6441a5 5px;
+        color: white;
+      }
+
+    }
+  }
+}

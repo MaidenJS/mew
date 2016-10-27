@@ -1,6 +1,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 .login-container {
@@ -80,7 +81,7 @@
   border-color: #6441a4;
 }
 
-.login-container {
+.register-container {
   /*
   background-color
   background-image
@@ -95,7 +96,7 @@
   position: relative;
 }
 
-.login-container__content {
+.register-container__content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -105,15 +106,15 @@
   text-align: center;
 }
 
-.login-container__content h1 {
+.register-container__content h1 {
   color: #ffffff;
 }
 
-.login-container__content span {
+.register-container__content span {
   color: grey;
 }
 
-.login-container__content input {
+.register-container__content input {
   width: 100%;
   border-radius: 10px;
   padding: 12px;
@@ -122,37 +123,37 @@
   outline-width: 0;
 }
 
-.login-container__form div {
+.register-container__form div {
   margin: 10px 0;
   font-size: 0.8em;
 }
 
-.login-container__form input {
+.register-container__form input {
   border: solid white 3px;
 }
 
-.login-container__form--login-button {
+.register-container__form--login-button {
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
 
-.login-container__social-buttons input {
+.register-container__social-buttons input {
   margin-top: 10px;
   color: #ffffff;
   cursor: pointer;
 }
 
-.login-container__social-buttons--facebook {
+.register-container__social-buttons--facebook {
   background: #3b5998;
   border-color: #3b5998;
 }
 
-.login-container__social-buttons--twitter {
+.register-container__social-buttons--twitter {
   background: #1da1f2;
   border-color: #1da1f2;
 }
 
-.login-container__social-buttons--twitch {
+.register-container__social-buttons--twitch {
   background: #6441a4;
   border-color: #6441a4;
 }
@@ -186,6 +187,21 @@
   border-radius: 0;
   width: 40px;
   height: 40px;
+}
+
+.profile-container .profile-container-column-1 .follow-button {
+  padding: 5px 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+  background: darkgray;
+  width: 80%;
+  cursor: pointer;
+  border-radius: 8px;
+  border: solid black 2px;
+}
+
+.profile-container .profile-container-column-1 .follow-button :hover {
+  background: black;
 }
 
 .profile-container .profile-container-column-2 {
@@ -271,19 +287,93 @@
   margin-bottom: 10px;
 }
 
-.follow-button {
-  padding: 5px 10px;
-  font-size: 1.2em;
-  color: #ffffff;
-  background: darkgray;
-  width: 80%;
-  cursor: pointer;
-  border-radius: 8px;
-  border: solid black 2px;
+.settings-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.follow-button :hover {
-  background: black;
+.settings-container .settings-bar {
+  padding: 5px;
+  border-right: solid lightgray 1px;
+  flex-basis: 20%;
+  margin: 5px;
+}
+
+.settings-container .settings-bar > div {
+  margin: 10px;
+}
+
+.settings-container .settings-main {
+  padding: 5px;
+  flex-basis: 50%;
+  border-right: solid lightgray 1px;
+  margin: 5px;
+}
+
+.settings-container .settings-main__input {
+  margin: 20px 0;
+}
+
+.settings-container .settings-main__input--style {
+  margin-top: 10px;
+  width: 80%;
+  border-radius: 5px;
+  border: solid lightgray 2px;
+  background: #dedede;
+  outline: none;
+  height: 2.5em;
+}
+
+.settings-container .settings-main__input--update {
+  font-size: 1.2em;
+  background: lightgray;
+  cursor: pointer;
+}
+
+.settings-container .settings-main__input--update:hover {
+  background: grey;
+  color: white;
+}
+
+.settings-container .settings-main .social-accounts {
+  border-top: solid lightgray 1px;
+}
+
+.settings-container .settings-main .social-accounts h3 {
+  margin-top: 20px;
+}
+
+.settings-container .settings-main .social-accounts button {
+  margin-top: 20px;
+  font-weight: 600;
+  padding: 5px;
+  cursor: pointer;
+  width: 300px;
+  height: 50px;
+  border-radius: 6px;
+}
+
+.settings-container .settings-main .social-accounts button img {
+  vertical-align: bottom;
+}
+
+.settings-container .settings-main .social-accounts .facebook {
+  background: #3b5998;
+  border: solid #3b5998 5px;
+  color: white;
+}
+
+.settings-container .settings-main .social-accounts .twitter {
+  background: #55c7ea;
+  border: solid #55c7ea 5px;
+  color: white;
+}
+
+.settings-container .settings-main .social-accounts .twitch {
+  background: #6441a5;
+  border: solid #6441a5 5px;
+  color: white;
 }
 
 nav {
