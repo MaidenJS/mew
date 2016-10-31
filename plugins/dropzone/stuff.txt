@@ -1,0 +1,10 @@
+Sugar URL:          http://23.253.207.61/
+Login: MasterSolve
+PW: zRlin6LLcac5
+
+server
+username: root@23.253.207.61
+password: Sugar@dm!
+
+[10:24:15 PM] Chris Cassity: right now they have their test instance in the /var/www directory
+[10:24:42 PM] Chris Cassity: you can place the git version of their instance in another folder since they may be working on some stuff on the /var/www instance
