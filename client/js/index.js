@@ -46,7 +46,5 @@ function init() {
         router.action(fragmentId);
     }
 
-    // http://www.phpied.com/3-ways-to-define-a-javascript-class/
-    // don't forget the es6 way as well
-    console.log((new account));
+
 }

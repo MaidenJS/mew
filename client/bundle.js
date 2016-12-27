@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/client";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,10 +71,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_account_model__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__controllers_about_controller__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_router__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utilities_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_account_model__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__controllers_about_controller__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_router__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utilities_helpers__ = __webpack_require__(4);
 // Composition Root
 
 
@@ -123,34 +123,12 @@ function init() {
         router.action(fragmentId);
     }
 
-    // http://www.phpied.com/3-ways-to-define-a-javascript-class/
-    // don't forget the es6 way as well
-    console.log((new __WEBPACK_IMPORTED_MODULE_0__models_account_model__["a" /* default */]));
+
 }
 
 
 /***/ },
 /* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(0);
-
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ exports["a"] = account;
-function account() {
-    return {
-        hi: 'hello from account',
-        id: 10
-    }
-}
-
-/***/ },
-/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -177,7 +155,7 @@ function AboutController () {
 }
 
 /***/ },
-/* 4 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -210,7 +188,18 @@ function Router(config) {
 }
 
 /***/ },
-/* 5 */
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* unused harmony export account */
+function account() {
+    "use strict";
+
+}
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -221,6 +210,13 @@ function renderView(templatePath, data) {
     });
 }
 
+
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(0);
 
 
 /***/ }
