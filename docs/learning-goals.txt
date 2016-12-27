@@ -1,0 +1,42 @@
+My E-Sports World
+---------------------
+Design + figure out the features
+HTML + CSS
+
+JS
+- vanilla ES5/6
+- jQuery
+- handlebars
+- underscore?
+
+architecture
+- webpack
+- babel
+- routerjs?
+
+nodejs
+- express
+- mysql
+
+deployment
+- apache and nodejs ???
+
+What do I want to learn? and APPLY
+-----------------------
+- ES5/ES6
+	- books
+		- YDKJS
+		- JS the definitive guide
+	- videos
+		- pluralsight advanced JS
+		- pluralsight jquery less
+- css
+	- flexbox
+	- oocss
+	- smacss
+	- BEM
+		- books
+			- CSS the missing MANUAL
+		- videos
+			- pluralsight CSS in-depth
+			-css in depth

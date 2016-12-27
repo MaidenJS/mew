@@ -8,7 +8,7 @@ Setup
 Dependencies
 ----------------
 - jQuery
-- Mustache
+- Mustache/handlebars/underscore
 
 Learning
 ----------------

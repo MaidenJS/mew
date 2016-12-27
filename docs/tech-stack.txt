@@ -1,0 +1,17 @@
+Tech Stack
+-------------------
+
+HTML
+    -
+CSS
+    -
+JS
+    - NODEJS
+
+Tools
+-----------
+Jasmine
+webpack
+mongodb
+express
+firebase
