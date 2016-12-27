@@ -1,9 +1,10 @@
 // Composition Root
-import account from './models/account.model';
-import AboutController from './controllers/about.controller';
-import Router from './core/router';
 import renderView from './utilities/helpers';
-//import init from './app';
+import Router from './core/router';
+import AboutController from './modules/pages/about.controller';
+import ContactController from './modules/pages/contact.controller';
+import AccountController from './modules/account/account.controller';
+//import PageNotFoundController from './controllers/not-found-page.controller';
 
 init();
 
@@ -22,7 +23,7 @@ function init() {
 
         router.add({
             name: 'home',
-            controller: function () {
+            controller: () => {
                 renderView('js/views/home.html', {
                     first_name: 'John'
                 });
@@ -30,21 +31,29 @@ function init() {
         });
         router.add({
             name: 'about',
-            controller: 'AboutController'
+            controller: AboutController
         });
         router.add({
             name: 'contact',
-            controller: 'ContactController'
+            controller: ContactController
         });
         router.add({
-            name: 'profiles',
-            controller: 'ProfileController'
+            name: 'account/:id/test/:test',
+            controller: AccountController
+        });
+
+        /**
+         * for route not found pages
+         */
+        router.notFound({
+            controller: () => {
+                console.log('404');
+                document.getElementById('app').innerHTML = 'PAGE NOT FOUND BRO!';
+            }
         });
 
         let fragmentId = location.hash.substr(1);
 
         router.action(fragmentId);
     }
-
-
 }

@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "/client";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,16 +71,43 @@
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_account_model__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__controllers_about_controller__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_router__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utilities_helpers__ = __webpack_require__(4);
+/* harmony export (immutable) */ exports["a"] = renderView;
+/**
+ * Core component to the framework
+ * 
+ * @param templatePath
+ * @param data
+ */
+function renderView(templatePath, data) {
+    //window.location.reload();
+    $.ajax({
+        url: templatePath,
+        success: function(content){
+            document.getElementById('app').innerHTML = content;
+        },
+        timeout: 1000 //in milliseconds
+    });
+}
+
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_router__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_pages_about_controller__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_pages_contact_controller__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_account_account_controller__ = __webpack_require__(9);
 // Composition Root
 
 
 
 
-//import init from './app';
+
+//import PageNotFoundController from './controllers/not-found-page.controller';
 
 init();
 
@@ -95,71 +122,59 @@ function init() {
 
     function app() {
 
-        let router = new __WEBPACK_IMPORTED_MODULE_2__core_router__["a" /* default */]({});
+        let router = new __WEBPACK_IMPORTED_MODULE_1__core_router__["a" /* default */]({});
 
         router.add({
             name: 'home',
-            controller: function () {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3__utilities_helpers__["a" /* default */])('js/views/home.html', {
+            controller: () => {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utilities_helpers__["a" /* default */])('js/views/home.html', {
                     first_name: 'John'
                 });
             }
         });
         router.add({
             name: 'about',
-            controller: 'AboutController'
+            controller: __WEBPACK_IMPORTED_MODULE_2__modules_pages_about_controller__["a" /* default */]
         });
         router.add({
             name: 'contact',
-            controller: 'ContactController'
+            controller: __WEBPACK_IMPORTED_MODULE_3__modules_pages_contact_controller__["a" /* default */]
         });
         router.add({
-            name: 'profiles',
-            controller: 'ProfileController'
+            name: 'account/:id/test/:test',
+            controller: __WEBPACK_IMPORTED_MODULE_4__modules_account_account_controller__["a" /* default */]
+        });
+
+        /**
+         * for route not found pages
+         */
+        router.notFound({
+            controller: () => {
+                console.log('404');
+                document.getElementById('app').innerHTML = 'PAGE NOT FOUND BRO!';
+            }
         });
 
         let fragmentId = location.hash.substr(1);
 
         router.action(fragmentId);
     }
-
-
-}
-
-
-/***/ },
-/* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* unused harmony export default */
-function PagesController () {
-
-    this.home = function () {
-
-        var data = {
-            name: 'John Doe'
-        };
-
-        $.get("templates/home.html", function (content) {
-            $("#content").html(content);
-        })
-    };
-
-}
-
-function AboutController () {
-    renderView('js/views/about.html', {
-        first_name: 'John'
-    });
 }
 
 /***/ },
-/* 2 */
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ exports["a"] = Router;
+/**
+ *
+ * @param config
+ * @constructor
+ */
 function Router(config) {
     var self = this;
     var routeNames = [];
@@ -168,16 +183,43 @@ function Router(config) {
         routeNames.push(routeName);
     };
 
-    self.action = function (fragementName) {
+    self.action = function (fragmentName) {
+
+        var at_least_one_route_exists = false;
         for (let i = 0; i < routeNames.length; i++) {
-            if (routeNames[i]['name'] == fragementName) {
-                //console.log(routeNames[i]['name'], ' is defined');
-                if ( typeof routeNames[i]['controller'] == 'string' ) {
-                    window[routeNames[i]['controller']]();
+            let fragments = fragmentName.split("/");
+            let named_urls = routeNames[i]['name'].split("/");
+
+            var parameters = [];
+            for (let i = 0; i < named_urls.length; i++) {
+                if (named_urls[i].charAt(0) == ':') {
+                    let parameter = fragments.splice(i, 1);
+                    named_urls.splice(i, 1);
+                    parameters = parameters.concat(parameter);
                 }
-                else {
-                    routeNames[i]['controller']();
-                }
+            }
+
+            if (arraysEqual(fragments, named_urls)) {
+                console.log('fragment', fragments);
+                console.log('named url', named_urls);
+                console.log('parameters', parameters);
+                console.log(arraysEqual(fragments, named_urls));
+
+                //let param = routeNames[i]['name'].split("/")[1];
+                routeNames[i]['controller'].apply(null, parameters);
+
+                at_least_one_route_exists = true;
+            }
+        }
+
+        if (! at_least_one_route_exists) {
+
+            console.log('404 page, cuz no routes match');
+            try {
+                self.notFound();
+            }
+            catch (e) {
+
             }
         }
     };
@@ -185,39 +227,86 @@ function Router(config) {
     self.getAllRoutes = function() {
         return routeNames;
     };
+
+    self.notFound = (obj) => {
+        obj.controller();
+    };
+
+    function arraysEqual(arr1, arr2) {
+        if(arr1.length !== arr2.length)
+            return false;
+        for(var i = arr1.length; i--;) {
+            if(arr1[i] !== arr2[i])
+                return false;
+        }
+
+        return true;
+    }
 }
 
 /***/ },
-/* 3 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-"use strict";
-/* unused harmony export account */
-function account() {
-    "use strict";
+module.exports = __webpack_require__(1);
 
-}
 
 /***/ },
-/* 4 */
+/* 7 */,
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ exports["a"] = renderView;
-function renderView(templatePath, data) {
-    $.get(templatePath, function (content) {
-        $("#content").html(content);
+throw new Error("Cannot find module \"../utilities/helpers\"");
+/* harmony export (immutable) */ exports["a"] = AboutController;
+
+
+function AboutController () {
+    __WEBPACK_IMPORTED_MODULE_0__utilities_helpers___default()('js/views/about.html', {
+        first_name: 'John'
     });
 }
 
 
 
 /***/ },
-/* 5 */
+/* 9 */
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(0);
+"use strict";
+throw new Error("Cannot find module \"../utilities/helpers\"");
+/* harmony export (immutable) */ exports["a"] = AccountController;
 
+
+function AccountController (param1, param2) {
+    "use strict";
+
+    console.log('account controller', param1, param2);
+
+    __WEBPACK_IMPORTED_MODULE_0__utilities_helpers___default()('js/views/account.html', {
+        first_name: 'John'
+    });
+
+}
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+throw new Error("Cannot find module \"../utilities/helpers\"");
+/* harmony export (immutable) */ exports["a"] = ContactController;
+
+
+function ContactController (parameter) {
+
+    console.log('contact controller', parameter);
+
+    __WEBPACK_IMPORTED_MODULE_0__utilities_helpers___default()('js/views/contact.html', {
+        first_name: 'John'
+    });
+    
+}
 
 /***/ }
 /******/ ]);

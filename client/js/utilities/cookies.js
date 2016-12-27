@@ -1,45 +1,53 @@
 /**
+ * Cookie wrapper from w3schools.com instead of using document.cookies
  *
- * @param cname
- * @param cvalue
- * @param exdays
+ * class Cookie
  */
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
+export default class Cookie {
 
-/**
- *
- * @param cname
- * @returns {*}
- */
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
+    /**
+     *
+     * @param cname
+     * @param cvalue
+     * @param exdays
+     */
+    static setCookie(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
     }
-    return "";
-}
 
-function checkCookie() {
-    var user = getCookie("username");
-    if (user != "") {
-        alert("Welcome again " + user);
-    } 
-    else {
-        user = prompt("Please enter your name:", "");
-        if (user != "" && user != null) {
-            setCookie("username", user, 365);
+    /**
+     *
+     * @param cname
+     * @returns {*}
+     */
+    static getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    static checkCookie() {
+        var user = getCookie("username");
+        if (user != "") {
+            alert("Welcome again " + user);
+        }
+        else {
+            user = prompt("Please enter your name:", "");
+            if (user != "" && user != null) {
+                setCookie("username", user, 365);
+            }
         }
     }
 }

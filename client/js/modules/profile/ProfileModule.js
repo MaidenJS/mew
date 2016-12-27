@@ -1,3 +1,9 @@
+export function ProfileModule () {
+
+    console.log('PROFILE Module');
+}
+
+
 export function module1 (param1) {
 
     return 1;
