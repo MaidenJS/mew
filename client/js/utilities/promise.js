@@ -1,21 +1,18 @@
-function getJSON(url) {
+export default function getJSON(url) {
     var xhr = new XMLHttpRequest();
     return new Promise((resolve, reject) => {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     resolve(JSON.parse(xhr.responseText));
-                } else {
+                }
+                else {
                     reject(xhr.responseText);
                 }
             }
         };
-        xhr.open('GET', url, false);
+        xhr.open('GET', url, true);
         xhr.send();
     });
 }
 
-getJSON('../../profiles.json')
-    .then(function (data) {
-        console.log(data);
-    });

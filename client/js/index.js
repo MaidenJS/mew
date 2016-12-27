@@ -1,9 +1,11 @@
 // Composition Root
 import renderView from './utilities/helpers';
+import view from './utilities/view';
 import Router from './core/router';
 import AboutController from './modules/pages/about.controller';
 import ContactController from './modules/pages/contact.controller';
 import AccountController from './modules/account/account.controller';
+import getJSON from './utilities/promise';
 //import PageNotFoundController from './controllers/not-found-page.controller';
 
 init();
@@ -24,7 +26,7 @@ function init() {
         router.add({
             name: 'home',
             controller: () => {
-                renderView('js/views/home.html', {
+                renderView('js/modules/pages/home.html', {
                     first_name: 'John'
                 });
             }
@@ -38,7 +40,22 @@ function init() {
             controller: ContactController
         });
         router.add({
-            name: 'account/:id/test/:test',
+            name: 'account/:id',
+            controller: AccountController
+        });
+
+        router.add({
+            name: 'login',
+            controller: AccountController
+        });
+
+        router.add({
+            name: 'register',
+            controller: AccountController
+        });
+
+        router.add({
+            name: 'profile',
             controller: AccountController
         });
 
@@ -52,8 +69,20 @@ function init() {
             }
         });
 
+        /**
+         * filters and middle ware
+         */
+        /*        router.middleware({
+
+        });*/
+
         let fragmentId = location.hash.substr(1);
 
         router.action(fragmentId);
+
+        view('navbar', 'js/modules/navbar/navbar.html', {
+            title: 'TITLE',
+            body: 'BODY'
+        });
     }
 }

@@ -1,4 +1,4 @@
-import renderView from '../utilities/helpers';
+import renderView from '../../utilities/helpers';
 
 export default function ContactController (parameter) {
 

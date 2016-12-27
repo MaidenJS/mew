@@ -14,4 +14,3 @@ export default function renderView(templatePath, data) {
         timeout: 1000 //in milliseconds
     });
 }
-

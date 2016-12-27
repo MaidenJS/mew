@@ -71,37 +71,16 @@
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ exports["a"] = renderView;
-/**
- * Core component to the framework
- * 
- * @param templatePath
- * @param data
- */
-function renderView(templatePath, data) {
-    //window.location.reload();
-    $.ajax({
-        url: templatePath,
-        success: function(content){
-            document.getElementById('app').innerHTML = content;
-        },
-        timeout: 1000 //in milliseconds
-    });
-}
-
-
-
-/***/ },
-/* 1 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_router__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modules_pages_about_controller__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_pages_contact_controller__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_account_account_controller__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utilities_view__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_router__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_pages_about_controller__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_pages_contact_controller__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utilities_promise__ = __webpack_require__(8);
 // Composition Root
+
+
 
 
 
@@ -122,27 +101,42 @@ function init() {
 
     function app() {
 
-        let router = new __WEBPACK_IMPORTED_MODULE_1__core_router__["a" /* default */]({});
+        let router = new __WEBPACK_IMPORTED_MODULE_2__core_router__["a" /* default */]({});
 
         router.add({
             name: 'home',
             controller: () => {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utilities_helpers__["a" /* default */])('js/views/home.html', {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utilities_helpers__["a" /* default */])('js/modules/pages/home.html', {
                     first_name: 'John'
                 });
             }
         });
         router.add({
             name: 'about',
-            controller: __WEBPACK_IMPORTED_MODULE_2__modules_pages_about_controller__["a" /* default */]
+            controller: __WEBPACK_IMPORTED_MODULE_3__modules_pages_about_controller__["a" /* default */]
         });
         router.add({
             name: 'contact',
-            controller: __WEBPACK_IMPORTED_MODULE_3__modules_pages_contact_controller__["a" /* default */]
+            controller: __WEBPACK_IMPORTED_MODULE_4__modules_pages_contact_controller__["a" /* default */]
         });
         router.add({
-            name: 'account/:id/test/:test',
-            controller: __WEBPACK_IMPORTED_MODULE_4__modules_account_account_controller__["a" /* default */]
+            name: 'account/:id',
+            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
+        });
+
+        router.add({
+            name: 'login',
+            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
+        });
+
+        router.add({
+            name: 'register',
+            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
+        });
+
+        router.add({
+            name: 'profile',
+            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
         });
 
         /**
@@ -155,17 +149,26 @@ function init() {
             }
         });
 
+        /**
+         * filters and middle ware
+         */
+        /*        router.middleware({
+
+        });*/
+
         let fragmentId = location.hash.substr(1);
 
         router.action(fragmentId);
+
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utilities_view__["a" /* default */])('navbar', 'js/modules/navbar/navbar.html', {
+            title: 'TITLE',
+            body: 'BODY'
+        });
     }
 }
 
 /***/ },
-/* 2 */,
-/* 3 */,
-/* 4 */,
-/* 5 */
+/* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -245,56 +248,56 @@ function Router(config) {
 }
 
 /***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(1);
-
-
-/***/ },
-/* 7 */,
-/* 8 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Cannot find module \"../utilities/helpers\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utilities_view__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utilities_promise__ = __webpack_require__(8);
+/* harmony export (immutable) */ exports["a"] = AccountController;
+
+
+
+
+function AccountController (id, param2) {
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__utilities_promise__["a" /* default */])('../api/account.json')
+        .then((data) => {
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utilities_view__["a" /* default */])('app', 'js/modules/account/account.html', {
+                first_name: data.first_name,
+                last_name: data.last_name,
+                user_id: id
+            });
+        });
+
+}
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(5);
 /* harmony export (immutable) */ exports["a"] = AboutController;
 
 
 function AboutController () {
-    __WEBPACK_IMPORTED_MODULE_0__utilities_helpers___default()('js/views/about.html', {
+
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utilities_helpers__["a" /* default */])('js/modules/pages/about.html', {
         first_name: 'John'
     });
+    
 }
 
 
 
 /***/ },
-/* 9 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Cannot find module \"../utilities/helpers\"");
-/* harmony export (immutable) */ exports["a"] = AccountController;
-
-
-function AccountController (param1, param2) {
-    "use strict";
-
-    console.log('account controller', param1, param2);
-
-    __WEBPACK_IMPORTED_MODULE_0__utilities_helpers___default()('js/views/account.html', {
-        first_name: 'John'
-    });
-
-}
-
-/***/ },
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-throw new Error("Cannot find module \"../utilities/helpers\"");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(5);
 /* harmony export (immutable) */ exports["a"] = ContactController;
 
 
@@ -302,11 +305,79 @@ function ContactController (parameter) {
 
     console.log('contact controller', parameter);
 
-    __WEBPACK_IMPORTED_MODULE_0__utilities_helpers___default()('js/views/contact.html', {
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utilities_helpers__["a" /* default */])('js/views/contact.html', {
         first_name: 'John'
     });
     
 }
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ exports["a"] = renderView;
+/**
+ * Core component to the framework
+ * 
+ * @param templatePath
+ * @param data
+ */
+function renderView(templatePath, data) {
+    //window.location.reload();
+    $.ajax({
+        url: templatePath,
+        success: function(content){
+            document.getElementById('app').innerHTML = content;
+        },
+        timeout: 1000 //in milliseconds
+    });
+}
+
+/***/ },
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(0);
+
+
+/***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ exports["a"] = view;
+function view(section, template_url, data) {
+    $.get(template_url, function(content) {
+        document.getElementById(section).innerHTML = Handlebars.compile(content)(data);
+    });
+}
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ exports["a"] = getJSON;
+function getJSON(url) {
+    var xhr = new XMLHttpRequest();
+    return new Promise((resolve, reject) => {
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    resolve(JSON.parse(xhr.responseText));
+                }
+                else {
+                    reject(xhr.responseText);
+                }
+            }
+        };
+        xhr.open('GET', url, true);
+        xhr.send();
+    });
+}
+
+
 
 /***/ }
 /******/ ]);
