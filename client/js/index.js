@@ -6,6 +6,7 @@ import AboutController from './modules/pages/about.controller';
 import ContactController from './modules/pages/contact.controller';
 import AccountController from './modules/account/account.controller';
 import getJSON from './utilities/promise';
+import {Application} from './modules/app/app';
 //import PageNotFoundController from './controllers/not-found-page.controller';
 
 init();
@@ -56,7 +57,37 @@ function init() {
 
         router.add({
             name: 'profile',
-            controller: AccountController
+            controller: function () {
+                console.log('profile');
+                let obj2 = function () {
+                    let i = 0;
+
+                    let add = function (num) {
+                        i += num;
+                        return this;
+                    };
+
+                    let sub = function (num) {
+                        i -= num;
+                        return this;
+                    };
+
+                    let print = function () {
+                        console.log(i);
+                    };
+
+                    return {
+                        add: add,
+                        sub: sub,
+                        print: print
+                    }
+                };
+
+                let y = obj2();
+                y.add(3).sub(1).print();
+
+
+            }
         });
 
         /**
@@ -86,3 +117,21 @@ function init() {
         });
     }
 }
+
+/**
+ * bootstraping your app as a basis/registry to load the rest of your app
+ */
+export class App extends Application {
+
+    constructor() {
+        super('MEW');
+        this.property = 'new property'
+    }
+
+    show(element) {
+        this.titleBar.appendElement(element)
+    }
+}
+
+export let application = new App();
+application.show($('body'));

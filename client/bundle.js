@@ -63,112 +63,12 @@
 /******/ 	__webpack_require__.p = "/client";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 41);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/******/ ({
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utilities_view__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_router__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_pages_about_controller__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_pages_contact_controller__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utilities_promise__ = __webpack_require__(8);
-// Composition Root
-
-
-
-
-
-
-
-//import PageNotFoundController from './controllers/not-found-page.controller';
-
-init();
-
-function init() {
-    if (!location.hash) {
-        location.hash = "#home";
-    }
-
-    app();
-
-    window.addEventListener("hashchange", app, true);
-
-    function app() {
-
-        let router = new __WEBPACK_IMPORTED_MODULE_2__core_router__["a" /* default */]({});
-
-        router.add({
-            name: 'home',
-            controller: () => {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utilities_helpers__["a" /* default */])('js/modules/pages/home.html', {
-                    first_name: 'John'
-                });
-            }
-        });
-        router.add({
-            name: 'about',
-            controller: __WEBPACK_IMPORTED_MODULE_3__modules_pages_about_controller__["a" /* default */]
-        });
-        router.add({
-            name: 'contact',
-            controller: __WEBPACK_IMPORTED_MODULE_4__modules_pages_contact_controller__["a" /* default */]
-        });
-        router.add({
-            name: 'account/:id',
-            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
-        });
-
-        router.add({
-            name: 'login',
-            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
-        });
-
-        router.add({
-            name: 'register',
-            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
-        });
-
-        router.add({
-            name: 'profile',
-            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
-        });
-
-        /**
-         * for route not found pages
-         */
-        router.notFound({
-            controller: () => {
-                console.log('404');
-                document.getElementById('app').innerHTML = 'PAGE NOT FOUND BRO!';
-            }
-        });
-
-        /**
-         * filters and middle ware
-         */
-        /*        router.middleware({
-
-        });*/
-
-        let fragmentId = location.hash.substr(1);
-
-        router.action(fragmentId);
-
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utilities_view__["a" /* default */])('navbar', 'js/modules/navbar/navbar.html', {
-            title: 'TITLE',
-            body: 'BODY'
-        });
-    }
-}
-
-/***/ },
-/* 1 */
+/***/ 10:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -248,13 +148,14 @@ function Router(config) {
 }
 
 /***/ },
-/* 2 */
+
+/***/ 11:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utilities_view__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utilities_promise__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utilities_view__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utilities_promise__ = __webpack_require__(5);
 /* harmony export (immutable) */ exports["a"] = AccountController;
 
 
@@ -274,11 +175,28 @@ function AccountController (id, param2) {
 }
 
 /***/ },
-/* 3 */
+
+/***/ 12:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(5);
+class Application {
+
+    constructor(title) {
+        this.title = title;
+    }
+
+}
+/* harmony export (immutable) */ exports["a"] = Application;
+
+
+/***/ },
+
+/***/ 13:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(2);
 /* harmony export (immutable) */ exports["a"] = AboutController;
 
 
@@ -293,11 +211,12 @@ function AboutController () {
 
 
 /***/ },
-/* 4 */
+
+/***/ 14:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(2);
 /* harmony export (immutable) */ exports["a"] = ContactController;
 
 
@@ -312,7 +231,8 @@ function ContactController (parameter) {
 }
 
 /***/ },
-/* 5 */
+
+/***/ 2:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -335,26 +255,16 @@ function renderView(templatePath, data) {
 }
 
 /***/ },
-/* 6 */
+
+/***/ 41:
 /***/ function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(0);
+module.exports = __webpack_require__(9);
 
 
 /***/ },
-/* 7 */
-/***/ function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony export (immutable) */ exports["a"] = view;
-function view(section, template_url, data) {
-    $.get(template_url, function(content) {
-        document.getElementById(section).innerHTML = Handlebars.compile(content)(data);
-    });
-}
-
-/***/ },
-/* 8 */
+/***/ 5:
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -379,5 +289,175 @@ function getJSON(url) {
 
 
 
+/***/ },
+
+/***/ 6:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ exports["a"] = view;
+function view(section, template_url, data) {
+    $.get(template_url, function(content) {
+        document.getElementById(section).innerHTML = Handlebars.compile(content)(data);
+    });
+}
+
+/***/ },
+
+/***/ 9:
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_helpers__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utilities_view__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_router__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modules_pages_about_controller__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modules_pages_contact_controller__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utilities_promise__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__modules_app_app__ = __webpack_require__(12);
+Object.defineProperty(exports, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(exports, "application", function() { return application; });
+// Composition Root
+
+
+
+
+
+
+
+
+//import PageNotFoundController from './controllers/not-found-page.controller';
+
+init();
+
+function init() {
+    if (!location.hash) {
+        location.hash = "#home";
+    }
+
+    app();
+
+    window.addEventListener("hashchange", app, true);
+
+    function app() {
+
+        let router = new __WEBPACK_IMPORTED_MODULE_2__core_router__["a" /* default */]({});
+
+        router.add({
+            name: 'home',
+            controller: () => {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utilities_helpers__["a" /* default */])('js/modules/pages/home.html', {
+                    first_name: 'John'
+                });
+            }
+        });
+        router.add({
+            name: 'about',
+            controller: __WEBPACK_IMPORTED_MODULE_3__modules_pages_about_controller__["a" /* default */]
+        });
+        router.add({
+            name: 'contact',
+            controller: __WEBPACK_IMPORTED_MODULE_4__modules_pages_contact_controller__["a" /* default */]
+        });
+        router.add({
+            name: 'account/:id',
+            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
+        });
+
+        router.add({
+            name: 'login',
+            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
+        });
+
+        router.add({
+            name: 'register',
+            controller: __WEBPACK_IMPORTED_MODULE_5__modules_account_account_controller__["a" /* default */]
+        });
+
+        router.add({
+            name: 'profile',
+            controller: function () {
+                console.log('profile');
+                let obj2 = function () {
+                    let i = 0;
+
+                    let add = function (num) {
+                        i += num;
+                        return this;
+                    };
+
+                    let sub = function (num) {
+                        i -= num;
+                        return this;
+                    };
+
+                    let print = function () {
+                        console.log(i);
+                    };
+
+                    return {
+                        add: add,
+                        sub: sub,
+                        print: print
+                    }
+                };
+
+                let y = obj2();
+                y.add(3).sub(1).print();
+
+
+            }
+        });
+
+        /**
+         * for route not found pages
+         */
+        router.notFound({
+            controller: () => {
+                console.log('404');
+                document.getElementById('app').innerHTML = 'PAGE NOT FOUND BRO!';
+            }
+        });
+
+        /**
+         * filters and middle ware
+         */
+        /*        router.middleware({
+
+        });*/
+
+        let fragmentId = location.hash.substr(1);
+
+        router.action(fragmentId);
+
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__utilities_view__["a" /* default */])('navbar', 'js/modules/navbar/navbar.html', {
+            title: 'TITLE',
+            body: 'BODY'
+        });
+    }
+}
+
+/**
+ * bootstraping your app as a basis/registry to load the rest of your app
+ */
+class App extends __WEBPACK_IMPORTED_MODULE_7__modules_app_app__["a" /* Application */] {
+
+    constructor() {
+        super('MEW');
+        this.property = 'new property'
+    }
+
+    show(element) {
+        this.titleBar.appendElement(element)
+    }
+}
+/* harmony export (immutable) */ exports["App"] = App;
+
+
+let application = new App();
+application.show($('body'));
+
 /***/ }
-/******/ ]);
+
+/******/ });
